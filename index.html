@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITAL ATHLETICS 輝途田徑 — 專業青少年及學校田徑培訓課程</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts (Inter & Noto Sans HK) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+HK:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#142B4D',
+                            dark: '#0D1D35',
+                            light: '#1E3F70'
+                        },
+                        orange: {
+                            DEFAULT: '#FF6B00',
+                            hover: '#E66000',
+                            light: '#FFF3EB'
+                        },
+                        slatebg: '#F4F7FA'
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', '"Noto Sans HK"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans HK', sans-serif;
+            color: #142B4D;
+            background-color: #FFFFFF;
+        }
+        /* 自訂捲軸樣式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F7FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-orange selection:text-white">
+
+    <!-- 頂部導覽列 (Navbar) -->
+    <header class="sticky top-0 z-50 bg-navy text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- 品牌標誌 -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-orange flex items-center justify-center text-white font-black text-xl shadow-sm group-hover:bg-orange-hover transition">
+                        VA
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg md:text-xl tracking-wider block leading-none">VITAL ATHLETICS</span>
+                        <span class="text-xs text-slate-300 tracking-widest block mt-1">輝途田徑</span>
+                    </div>
+                </a>
+
+                <!-- 電腦版導覽連結 -->
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm font-medium">
+                    <a href="#courses" class="hover:text-orange transition py-2">課程介紹及時間表</a>
+                    <a href="#coach" class="hover:text-orange transition py-2">教練介紹</a>
+                    <a href="#benchmarks" class="hover:text-orange transition py-2">本地學界數據查看</a>
+                    <a href="#u20-rankings" class="hover:text-orange transition py-2">全港U20排名數據</a>
+                    <a href="#contact" class="bg-orange hover:bg-orange-hover text-white font-bold px-5 py-2.5 rounded-lg shadow-sm transition">
+                        聯絡查詢
+                    </a>
+                </nav>
+
+                <!-- 手機版選單按鈕 -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-200 hover:text-white focus:outline-none p-2" aria-label="開啟選單">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手機版摺疊選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-dark border-t border-slate-700 px-4 pt-3 pb-6 space-y-2">
+            <a href="#courses" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-navy-light">課程介紹及時間表</a>
+            <a href="#coach" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-navy-light">教練介紹</a>
+            <a href="#benchmarks" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-navy-light">本地學界數據查看</a>
+            <a href="#u20-rankings" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-white hover:bg-navy-light">全港U20排名數據</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-link block w-full text-center bg-orange hover:bg-orange-hover text-white font-bold px-4 py-3 rounded-lg">
+                    聯絡查詢
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主視覺區 (Hero Section) -->
+    <section class="relative bg-navy text-white overflow-hidden border-b-4 border-orange">
+        <!-- 背景幾何裝飾 -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M-100 600L500 0H650L50 600H-100Z" fill="#FF6B00"/>
+                <path d="M200 600L800 0H900L300 600H200Z" fill="#FFFFFF"/>
+                <path d="M450 600L1050 0H1250L650 600H450Z" fill="#FF6B00"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-navy-light border border-slate-600 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium text-orange mb-6">
+                    <i class="fa-solid fa-person-running"></i>
+                    <span>奔向輝途｜專業青少年及學校田徑培訓課程</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+                    VITAL ATHLETICS<br>
+                    <span class="text-orange">輝途田徑</span>
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed mb-8 border-l-4 border-orange pl-4">
+                    「不只教導正確的發力姿態與競技技巧，更注重青少年的心理素質和訓練態度。每一步訓練都是為了讓學生自信地奔向輝途。」
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#courses" class="bg-orange hover:bg-orange-hover text-white font-bold px-6 py-3.5 rounded-lg shadow-lg transition flex items-center space-x-2">
+                        <span>查看訓練班時間表及收費</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#benchmarks" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-3.5 rounded-lg transition">
+                        2025-2026 元朗學界田徑數據
+                    </a>
+                    <a href="#u20-rankings" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-6 py-3.5 rounded-lg transition">
+                        全香港 U20 排名數據
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能區 1：課程介紹（時間表與學費收費） -->
+    <section id="courses" class="py-16 md:py-24 bg-slatebg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-orange font-bold text-sm tracking-widest uppercase block mb-2">Courses & Schedule</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy">課程介紹</h2>
+                <div class="w-16 h-1.5 bg-orange rounded-full mt-3"></div>
+            </div>
+
+            <!-- 訓練班每週時間表 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mb-12">
+                <div class="bg-navy px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <div>
+                        <h3 class="text-lg md:text-xl font-bold text-white">VITAL ATHLETICS 輝途田徑 — 訓練班每週時間表</h3>
+                        <p class="text-xs text-slate-300 mt-0.5">奔向輝途｜專業青少年及學校田徑培訓課程</p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[768px]">
+                        <thead>
+                            <tr class="bg-navy-light text-white text-sm font-bold">
+                                <th class="py-3.5 px-4 border-r border-slate-600 whitespace-nowrap">星期/日期</th>
+                                <th class="py-3.5 px-4 border-r border-slate-600 whitespace-nowrap">時間</th>
+                                <th class="py-3.5 px-4 border-r border-slate-600 whitespace-nowrap">訓練場地</th>
+                                <th class="py-3.5 px-4 border-r border-slate-600 whitespace-nowrap">課程/組別</th>
+                                <th class="py-3.5 px-4 border-r border-slate-600">主要訓練內容</th>
+                                <th class="py-3.5 px-4 border-r border-slate-600 whitespace-nowrap">適用對象</th>
+                                <th class="py-3.5 px-4 border-r border-slate-600 whitespace-nowrap">主教練</th>
+                                <th class="py-3.5 px-4 text-center whitespace-nowrap">報名狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm md:text-base text-navy">
+                            <tr class="bg-[#E9EFF6]/60 hover:bg-[#E9EFF6] transition">
+                                <td class="py-4 px-4 font-semibold whitespace-nowrap">星期三</td>
+                                <td class="py-4 px-4 whitespace-nowrap font-mono">17:30 - 19:00</td>
+                                <td class="py-4 px-4 whitespace-nowrap">天水圍運動場</td>
+                                <td class="py-4 px-4 font-medium whitespace-nowrap">青少年短跑班</td>
+                                <td class="py-4 px-4">短跑技巧、速度訓練</td>
+                                <td class="py-4 px-4 whitespace-nowrap">12-17 歲中小學生</td>
+                                <td class="py-4 px-4 whitespace-nowrap">梁sir</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="inline-block bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full text-xs">招生中</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-white hover:bg-[#E9EFF6] transition">
+                                <td class="py-4 px-4 font-semibold whitespace-nowrap">星期五</td>
+                                <td class="py-4 px-4 whitespace-nowrap font-mono">17:30 - 19:00</td>
+                                <td class="py-4 px-4 whitespace-nowrap">屯門鄧肇堅運動場</td>
+                                <td class="py-4 px-4 font-medium whitespace-nowrap">青少年短跑班</td>
+                                <td class="py-4 px-4">短跑技巧、速度訓練</td>
+                                <td class="py-4 px-4 whitespace-nowrap">12-17 歲中小學生</td>
+                                <td class="py-4 px-4 whitespace-nowrap">梁sir</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="inline-block bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full text-xs">招生中</span>
+                                </td>
+                            </tr>
+                            <tr class="bg-[#E9EFF6]/60 hover:bg-[#E9EFF6] transition">
+                                <td class="py-4 px-4 font-semibold whitespace-nowrap">星期日</td>
+                                <td class="py-4 px-4 whitespace-nowrap font-mono">10:00 - 11:00</td>
+                                <td class="py-4 px-4 whitespace-nowrap">天水圍運動場/屯門鄧肇堅運動場</td>
+                                <td class="py-4 px-4 font-medium whitespace-nowrap">幼兒田徑興趣班</td>
+                                <td class="py-4 px-4">趣味田徑體驗、協調訓練</td>
+                                <td class="py-4 px-4 whitespace-nowrap">3-6 歲幼兒</td>
+                                <td class="py-4 px-4 whitespace-nowrap">梁sir</td>
+                                <td class="py-4 px-4 text-center whitespace-nowrap">
+                                    <span class="inline-block bg-orange-light text-orange font-bold px-3 py-1 rounded-full text-xs">預備中</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 課程學費及收費 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-navy px-6 py-4">
+                    <h3 class="text-lg md:text-xl font-bold text-white">Vital Athletics 課程學費及收費</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[720px]">
+                        <thead>
+                            <tr class="bg-orange text-white text-sm font-bold">
+                                <th class="py-3.5 px-5 border-r border-orange-hover whitespace-nowrap">課程類型</th>
+                                <th class="py-3.5 px-5 border-r border-orange-hover whitespace-nowrap">適用對象</th>
+                                <th class="py-3.5 px-5 border-r border-orange-hover text-center whitespace-nowrap">堂數/期</th>
+                                <th class="py-3.5 px-5 border-r border-orange-hover text-right whitespace-nowrap">每期學費 (HKD)</th>
+                                <th class="py-3.5 px-5 border-r border-orange-hover text-right whitespace-nowrap">單堂</th>
+                                <th class="py-3.5 px-5">備註 / 優惠</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fee-tbody" class="divide-y divide-slate-200 text-sm md:text-base text-navy">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-4 px-5 font-semibold whitespace-nowrap">幼兒田徑興趣班</td>
+                                <td class="py-4 px-5 whitespace-nowrap">3-6 歲幼兒</td>
+                                <td class="py-4 px-5 text-center whitespace-nowrap">4 堂 (每月)</td>
+                                <td class="py-4 px-5 text-right font-bold font-mono whitespace-nowrap">$500</td>
+                                <td class="py-4 px-5 text-right font-bold font-mono whitespace-nowrap">$140</td>
+                                <td class="py-4 px-5 font-medium text-navy">首次試堂優惠$100（單堂）</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="py-4 px-5 font-semibold whitespace-nowrap">青少年短跑班</td>
+                                <td class="py-4 px-5 whitespace-nowrap">12-17 歲中小學生</td>
+                                <td class="py-4 px-5 text-center whitespace-nowrap">4 堂 (每月)</td>
+                                <td class="py-4 px-5 text-right font-bold font-mono whitespace-nowrap">$550</td>
+                                <td class="py-4 px-5 text-right font-bold font-mono whitespace-nowrap">$150</td>
+                                <td class="py-4 px-5 font-medium text-navy">首次試堂優惠$100（單堂）</td>
+                            </tr>
+                            <tr class="bg-orange-light/50 hover:bg-orange-light transition">
+                                <td class="py-4 px-5 font-semibold whitespace-nowrap">學校/機構包班</td>
+                                <td class="py-4 px-5 whitespace-nowrap">中小學田徑隊</td>
+                                <td class="py-4 px-5 text-center whitespace-nowrap">按合約計算</td>
+                                <td class="py-4 px-5 text-right font-bold whitespace-nowrap">另行報價</td>
+                                <td class="py-4 px-5 text-right text-slate-400 whitespace-nowrap"></td>
+                                <td class="py-4 px-5 text-navy font-medium">
+                                    不設試堂。請學校/機構以電郵（<a href="mailto:vitalathleticshk@gmail.com" class="text-orange underline hover:text-orange-hover">vitalathleticshk@gmail.com</a>）進行報價邀請/聯絡，或透過 WhatsApp 查詢。
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能區 2：教練介紹 -->
+    <section id="coach" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-orange font-bold text-sm tracking-widest uppercase block mb-2">Coach Profile</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy">教練介紹</h2>
+                <div class="w-16 h-1.5 bg-orange rounded-full mt-3"></div>
+            </div>
+
+            <div class="bg-slatebg rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+                <!-- 教練頂部基本資訊與相片展示 -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8 pb-8 mb-8 border-b border-slate-300">
+                    <!-- 教練個人相片展示框 -->
+                    <div class="w-56 sm:w-64 shrink-0">
+                        <div class="relative rounded-2xl overflow-hidden shadow-md border-4 border-white bg-navy aspect-[4/5] flex items-center justify-center group">
+                            <img 
+                                id="coach-photo-img"
+                                src="螢幕截圖 2026-11-08 下午11.20.30.png" 
+                                alt="梁承希教練" 
+                                class="w-full h-full object-cover object-top"
+                                onerror="if(!this.dataset.triedAlt){this.dataset.triedAlt='1';this.src='Coach.jpg';}else{this.classList.add('hidden');document.getElementById('coach-photo-fallback').classList.remove('hidden');}"
+                            >
+                            <!-- 若預覽環境未掛載本地圖檔時之高質感備用展示與即時載入器 -->
+                            <div id="coach-photo-fallback" class="hidden inset-0 w-full h-full bg-gradient-to-b from-navy-light to-navy text-white p-5 flex flex-col items-center justify-center text-center">
+                                <div class="w-20 h-20 rounded-full bg-orange/20 border-2 border-orange flex items-center justify-center mb-3">
+                                    <i class="fa-solid fa-trophy text-orange text-3xl"></i>
+                                </div>
+                                <p class="font-black text-lg tracking-wider">梁承希 教練</p>
+                                <p class="text-xs text-slate-300 mt-1">HONG KONG CHINA<br>Athletics Team</p>
+                                <label for="coach-photo-upload" class="mt-4 cursor-pointer inline-flex items-center space-x-1.5 bg-orange hover:bg-orange-hover text-white text-xs font-bold px-3.5 py-2 rounded-lg shadow transition">
+                                    <i class="fa-solid fa-image"></i>
+                                    <span>載入教練相片預覽</span>
+                                </label>
+                                <input type="file" id="coach-photo-upload" accept="image/*" class="hidden">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 教練頭銜與重點資格 -->
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="inline-block bg-orange-light text-orange font-bold text-xs px-3 py-1 rounded-full mb-3">
+                            VITAL ATHLETICS 主教練
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-center md:justify-start gap-2 sm:gap-3">
+                            <h3 class="text-3xl sm:text-4xl font-black text-navy">梁承希</h3>
+                            <span class="text-lg sm:text-xl font-bold text-orange">教練（梁sir）</span>
+                        </div>
+
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center space-x-3.5 shadow-sm">
+                                <div class="w-10 h-10 rounded-lg bg-orange-light text-orange flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-person-running text-lg"></i>
+                                </div>
+                                <span class="font-bold text-navy text-sm sm:text-base">世界田聯一級田徑教練</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center space-x-3.5 shadow-sm">
+                                <div class="w-10 h-10 rounded-lg bg-orange-light text-orange flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-trophy text-lg"></i>
+                                </div>
+                                <span class="font-bold text-navy text-sm sm:text-base">現役香港田徑代表隊成員</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center space-x-3.5 shadow-sm">
+                                <div class="w-10 h-10 rounded-lg bg-orange-light text-orange flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-medal text-lg"></i>
+                                </div>
+                                <span class="font-bold text-navy text-sm sm:text-base">香港十項全能紀錄保持者</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center space-x-3.5 shadow-sm">
+                                <div class="w-10 h-10 rounded-lg bg-orange-light text-orange flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-thumbtack text-lg"></i>
+                                </div>
+                                <span class="font-bold text-navy text-sm sm:text-base">主攻項目：短跑｜跳遠</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教練詳細資歷四宮格 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pb-8 mb-8 border-b border-slate-300">
+                    <!-- 教學經驗 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-9 h-9 rounded-lg bg-navy text-white flex items-center justify-center">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-navy">教學經驗</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-navy text-sm sm:text-base list-disc list-inside">
+                            <li>元朗區中學田徑隊 教練 (2019-現在)</li>
+                            <li>屯門區中小學田徑訓練班 教練 (2024-現在)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 相關資歷 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-9 h-9 rounded-lg bg-navy text-white flex items-center justify-center">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-navy">相關資歷</h4>
+                        </div>
+                        <ul class="space-y-2 text-navy text-sm sm:text-base list-disc list-inside">
+                            <li>HKBU 體育及康樂管理文學士</li>
+                            <li>EDUHK 學位教師教育深造文憑 (中學體育)</li>
+                            <li>CUHK 理學碩士 (運動科學與體力活動)</li>
+                            <li>WA CECS Level 1 Coaching</li>
+                        </ul>
+                    </div>
+
+                    <!-- 學生成績 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-9 h-9 rounded-lg bg-orange text-white flex items-center justify-center">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-navy">學生成績</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-navy text-sm sm:text-base list-disc list-inside">
+                            <li>全港學界精英田徑比賽 (男子跳遠前八名)</li>
+                            <li>屯門元朗區中學田徑學界 (跳遠、短跑項目前三名)</li>
+                        </ul>
+                    </div>
+
+                    <!-- 個人最佳成績 -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-9 h-9 rounded-lg bg-orange text-white flex items-center justify-center">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-navy">個人最佳成績</h4>
+                        </div>
+                        <ul class="space-y-2.5 text-navy text-sm sm:text-base">
+                            <li class="flex justify-between border-b border-slate-100 pb-1.5">
+                                <span class="font-medium">跳遠：</span>
+                                <span class="font-mono font-bold">7.24m</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-100 pb-1.5">
+                                <span class="font-medium">110米欄 (1.067m)：</span>
+                                <span class="font-mono font-bold">15.05s</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">十項全能：</span>
+                                <span class="font-mono font-bold text-orange">6537pts (香港紀錄)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 訓練理念與聯絡資料 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center space-x-2.5 mb-3">
+                            <i class="fa-solid fa-quote-left text-orange text-lg"></i>
+                            <h4 class="text-lg font-bold text-navy">訓練理念</h4>
+                        </div>
+                        <p class="text-navy text-sm sm:text-base leading-relaxed bg-white p-5 rounded-xl border border-slate-200">
+                            「不只教導正確的發力姿態與競技技巧，更注重青少年的心理素質和訓練態度。每一步訓練都是為了讓學生自信地奔向輝途。」
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center space-x-2.5 mb-3">
+                            <i class="fa-solid fa-address-book text-orange text-lg"></i>
+                            <h4 class="text-lg font-bold text-navy">聯絡資料</h4>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-3 text-sm sm:text-base">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-brands fa-instagram text-xl text-navy w-6 text-center"></i>
+                                <a href="https://instagram.com/vital_ath" target="_blank" rel="noopener noreferrer" class="font-medium text-navy hover:text-orange transition">vital_ath</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-lg text-navy w-6 text-center"></i>
+                                <a href="mailto:vitalathleticshk@gmail.com" class="font-medium text-navy hover:text-orange transition break-all">vitalathleticshk@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能區 3：本地學界數據查看 & 即時差距分析器 -->
+    <section id="benchmarks" class="py-16 md:py-24 bg-slatebg border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10">
+                <span class="text-orange font-bold text-sm tracking-widest uppercase block mb-2">2025-2026 Yuen Long Secondary Schools Athletics Results</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy">本地學界數據查看（2025-2026年度元朗中學田徑學界比賽）</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    以下顯示中國香港學界體育聯會元朗區中學分會 2025-2026 年度校際田徑比賽（100米、200米、400米、跳遠）決賽第 1 名至第 8 名官方成績指標，作為學員的訓練目標。
+                </p>
+                <div class="w-16 h-1.5 bg-orange rounded-full mt-3"></div>
+            </div>
+
+            <!-- 篩選控制列 -->
+            <div class="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- 項目選擇 -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">1. 選擇田徑項目</label>
+                        <div class="grid grid-cols-4 gap-2" id="event-tabs">
+                            <button type="button" data-event="100m" class="event-btn bg-orange text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm">100米</button>
+                            <button type="button" data-event="200m" class="event-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition">200米</button>
+                            <button type="button" data-event="400m" class="event-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition">400米</button>
+                            <button type="button" data-event="lj" class="event-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition">跳遠</button>
+                        </div>
+                    </div>
+
+                    <!-- 性別選擇 -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">2. 選擇性別</label>
+                        <div class="grid grid-cols-2 gap-2" id="gender-tabs">
+                            <button type="button" data-gender="M" class="gender-btn bg-navy text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm">男子組</button>
+                            <button type="button" data-gender="F" class="gender-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition">女子組</button>
+                        </div>
+                    </div>
+
+                    <!-- 組別選擇 -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">3. 選擇組別</label>
+                        <div class="grid grid-cols-3 gap-2" id="grade-tabs">
+                            <button type="button" data-grade="A" class="grade-btn bg-navy text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm">甲組 (A)</button>
+                            <button type="button" data-grade="B" class="grade-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition">乙組 (B)</button>
+                            <button type="button" data-grade="C" class="grade-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition">丙組 (C)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 左側成績表 + 右側即時差距分析器 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- 左側：決賽頭 8 名成績指標表 (7 columns on lg) -->
+                <div class="lg:col-span-7 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-navy px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <div>
+                            <h3 id="table-title" class="text-lg font-bold text-white">男子甲組 — 100米 決賽成績指標</h3>
+                            <p class="text-xs text-slate-300 mt-0.5">2025-2026年度元朗區中學校際田徑比賽官方決賽成績</p>
+                        </div>
+                        <span id="table-unit-badge" class="bg-orange text-white text-xs font-bold px-3 py-1 rounded-full self-start sm:self-auto">單位：秒 (s)｜人手計時成績*</span>
+                    </div>
+
+                    <!-- 短跑項目人手計時特別提示條 -->
+                    <div id="yl-handtime-banner" class="bg-orange-light border-b border-orange/20 px-6 py-2.5 flex items-center space-x-2 text-xs sm:text-sm font-bold text-navy">
+                        <i class="fa-solid fa-stopwatch text-orange"></i>
+                        <span>* 短跑項目（100米、200米、400米）成績為人手計時成績*</span>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 text-navy text-xs sm:text-sm font-bold border-b border-slate-200">
+                                    <th class="py-3.5 px-6">決賽名次</th>
+                                    <th class="py-3.5 px-6">指標說明</th>
+                                    <th class="py-3.5 px-6 text-right" id="yl-score-col-header">決賽成績 (人手計時*)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="benchmark-tbody" class="divide-y divide-slate-200 text-sm sm:text-base">
+                                <!-- 由 JavaScript 動態渲染 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="table-footnote" class="px-6 py-3 bg-slate-50 border-t border-slate-200 text-xs text-slate-600 space-y-1">
+                        <p class="font-semibold text-orange" id="yl-footnote-handtime">* 提示：短跑項目（100米、200米、400米）成績為人手計時成績*。</p>
+                        <p>* 資料源自 2025-2026 年度中國香港學界體育聯會元朗區中學分會校際田徑比賽官方成績公佈。</p>
+                    </div>
+                </div>
+
+                <!-- 右側：「距離元朗學界頭 8 名還有多遠？」即時差距分析器 (5 columns on lg) -->
+                <div class="lg:col-span-5 bg-white rounded-xl shadow-md border-2 border-orange overflow-hidden">
+                    <div class="bg-orange px-6 py-4 text-white">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-gauge-high text-xl"></i>
+                            <h3 class="text-lg font-extrabold">距離元朗學界頭 8 名還有多遠？</h3>
+                        </div>
+                        <p class="text-xs text-white/90 mt-1">即時差距分析器｜輸入你目前的個人成績，對比元朗學界決賽標準</p>
+                    </div>
+
+                    <div class="p-6 space-y-5">
+                        <!-- 當前分析項目顯示 -->
+                        <div class="bg-slatebg p-3.5 rounded-lg border border-slate-200 flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-500">目前對比組別及項目：</span>
+                            <span id="analyzer-current-label" class="text-sm font-extrabold text-navy">男子甲組 100米</span>
+                        </div>
+
+                        <!-- 成績輸入欄 -->
+                        <div>
+                            <label for="user-score-input" id="input-label" class="block text-sm font-bold text-navy mb-2">
+                                請輸入你的個人成績（秒）：
+                            </label>
+                            <div class="flex space-x-2">
+                                <input 
+                                    type="text" 
+                                    inputmode="decimal"
+                                    id="user-score-input" 
+                                    placeholder="例如：12.20" 
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange font-mono text-base text-navy"
+                                >
+                                <button 
+                                    type="button" 
+                                    id="analyze-btn" 
+                                    class="bg-navy hover:bg-navy-light text-white font-bold px-6 py-3 rounded-lg transition shrink-0"
+                                >
+                                    即時分析
+                                </button>
+                            </div>
+                            <p id="input-helper" class="text-xs text-slate-500 mt-1.5">
+                                提示：請輸入秒數（元朗學界短跑項目成績為人手計時成績*）。
+                            </p>
+                        </div>
+
+                        <!-- 分析結果顯示區 -->
+                        <div id="analysis-result-box" class="bg-slatebg rounded-xl p-5 border border-slate-200 space-y-4">
+                            <div id="analysis-status" class="text-sm font-bold text-navy">
+                                請於上方輸入你的成績並點擊「即時分析」，系統將自動計算你與決賽第 8 名門檻及第 1 名金牌的差距。
+                            </div>
+
+                            <!-- 差距數據卡片 -->
+                            <div id="analysis-metrics" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="bg-white p-3.5 rounded-lg border border-slate-200">
+                                    <span class="text-xs text-slate-500 block" id="metric-top8-title">距離決賽門檻 (第8名)</span>
+                                    <span id="metric-top8-val" class="text-lg font-black font-mono text-navy mt-1 block">--</span>
+                                </div>
+                                <div class="bg-white p-3.5 rounded-lg border border-slate-200">
+                                    <span class="text-xs text-slate-500 block">距離金牌指標 (第1名)</span>
+                                    <span id="metric-gold-val" class="text-lg font-black font-mono text-orange mt-1 block">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 激勵元朗與屯門區學員報名訓練區塊 -->
+                        <div class="bg-navy text-white p-5 rounded-xl space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-fire-flame-curved text-orange text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-sm sm:text-base">元朗及屯門區學員：一齊向學界決賽進發！</h4>
+                                    <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                                        訓練班逢星期三於<strong>天水圍運動場</strong>、逢星期五於<strong>屯門鄧肇堅運動場</strong>進行。由梁sir親自指導短跑技巧、速度訓練及跳遠技術，助你突破個人最佳成績，踏上學界頒獎台！
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pt-1">
+                                <a href="#contact" class="block w-full text-center bg-orange hover:bg-orange-hover text-white font-bold py-2.5 px-4 rounded-lg text-sm transition shadow">
+                                    立即聯絡報名訓練
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能區 4：全香港 U20 排名數據查看 & 即時差距分析器（獨立分開顯示） -->
+    <section id="u20-rankings" class="py-16 md:py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10">
+                <span class="text-orange font-bold text-sm tracking-widest uppercase block mb-2">2026 Hong Kong Ranking (U20)</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy">全香港 U20 排名數據查看</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                    以下整理 2026 年度全香港 U20 田徑排名（100米、200米、400米、跳遠）男、女子第 1 名至第 10 名官方成績指標。
+                </p>
+                <div class="w-16 h-1.5 bg-orange rounded-full mt-3"></div>
+            </div>
+
+            <!-- U20 篩選控制列 -->
+            <div class="bg-slatebg p-4 sm:p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 項目選擇 -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">1. 選擇田徑項目</label>
+                        <div class="grid grid-cols-4 gap-2" id="u20-event-tabs">
+                            <button type="button" data-event="100m" class="u20-event-btn bg-orange text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm">100米</button>
+                            <button type="button" data-event="200m" class="u20-event-btn bg-white text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition border border-slate-200">200米</button>
+                            <button type="button" data-event="400m" class="u20-event-btn bg-white text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition border border-slate-200">400米</button>
+                            <button type="button" data-event="lj" class="u20-event-btn bg-white text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition border border-slate-200">跳遠</button>
+                        </div>
+                    </div>
+
+                    <!-- 性別選擇 -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">2. 選擇組別 / 性別</label>
+                        <div class="grid grid-cols-2 gap-2" id="u20-gender-tabs">
+                            <button type="button" data-gender="M" class="u20-gender-btn bg-navy text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm">男子 U20 (Men U20)</button>
+                            <button type="button" data-gender="F" class="u20-gender-btn bg-white text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition border border-slate-200">女子 U20 (Women U20)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 左側全港 U20 頭 10 名成績表 + 右側即時差距分析器 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- 左側：全港 U20 第 1 名至第 10 名成績指標表 (7 columns on lg) -->
+                <div class="lg:col-span-7 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-navy px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <div>
+                            <h3 id="u20-table-title" class="text-lg font-bold text-white">男子 U20 — 100米 全港排名成績指標</h3>
+                            <p id="u20-table-subtitle" class="text-xs text-slate-300 mt-0.5">Hong Kong Ranking &lt;Men (U20)&gt; (2026-01-01 to 2026-12-31)</p>
+                        </div>
+                        <span id="u20-unit-badge" class="bg-orange text-white text-xs font-bold px-3 py-1 rounded-full self-start sm:self-auto">單位：秒 (s)</span>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 text-navy text-xs sm:text-sm font-bold border-b border-slate-200">
+                                    <th class="py-3.5 px-6">香港排名</th>
+                                    <th class="py-3.5 px-6">指標說明</th>
+                                    <th class="py-3.5 px-6 text-right">官方成績</th>
+                                </tr>
+                            </thead>
+                            <tbody id="u20-tbody" class="divide-y divide-slate-200 text-sm sm:text-base">
+                                <!-- 由 JavaScript 動態渲染 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-50 border-t border-slate-200 text-xs text-slate-500">
+                        * 註：資料源自 2026 年度香港田徑排名（Hong Kong Ranking U20）官方成績表（不計算超風速 WA 紀錄）。
+                    </div>
+                </div>
+
+                <!-- 右側：「距離香港頭 10 名還有多遠？」即時差距分析器 (5 columns on lg) -->
+                <div class="lg:col-span-5 bg-slatebg rounded-xl shadow-md border-2 border-navy overflow-hidden">
+                    <div class="bg-navy px-6 py-4 text-white border-b-4 border-orange">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-chart-line text-orange text-xl"></i>
+                            <h3 class="text-lg font-extrabold">距離香港頭 10 名還有多遠？</h3>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-1">即時差距分析器｜輸入你的個人成績，對比全港 U20 頭 10 名及榜首紀錄</p>
+                    </div>
+
+                    <div class="p-6 space-y-5">
+                        <!-- 當前分析項目顯示 -->
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex items-center justify-between">
+                            <span class="text-xs font-bold text-slate-500">目前對比組別及項目：</span>
+                            <span id="u20-analyzer-current-label" class="text-sm font-extrabold text-navy">男子 U20 100米</span>
+                        </div>
+
+                        <!-- 成績輸入欄 -->
+                        <div>
+                            <label for="u20-score-input" id="u20-input-label" class="block text-sm font-bold text-navy mb-2">
+                                請輸入你的個人成績（秒）：
+                            </label>
+                            <div class="flex space-x-2">
+                                <input 
+                                    type="text" 
+                                    inputmode="decimal"
+                                    id="u20-score-input" 
+                                    placeholder="例如：11.20" 
+                                    class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange font-mono text-base text-navy"
+                                >
+                                <button 
+                                    type="button" 
+                                    id="u20-analyze-btn" 
+                                    class="bg-orange hover:bg-orange-hover text-white font-bold px-6 py-3 rounded-lg transition shrink-0 shadow-sm"
+                                >
+                                    即時分析
+                                </button>
+                            </div>
+                            <p id="u20-input-helper" class="text-xs text-slate-500 mt-1.5">
+                                提示：請輸入秒數（例如 11.20）。
+                            </p>
+                        </div>
+
+                        <!-- 分析結果顯示區 -->
+                        <div class="bg-white rounded-xl p-5 border border-slate-200 space-y-4">
+                            <div id="u20-analysis-status" class="text-sm font-bold text-navy">
+                                請於上方輸入你的成績並點擊「即時分析」，系統將自動計算你與全港 U20 第 10 名門檻及第 1 名榜首的差距。
+                            </div>
+
+                            <!-- 差距數據卡片 -->
+                            <div id="u20-analysis-metrics" class="hidden grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <div class="bg-slatebg p-3.5 rounded-lg border border-slate-200">
+                                    <span class="text-xs text-slate-500 block">距離全港第 10 名門檻</span>
+                                    <span id="u20-metric-top10-val" class="text-lg font-black font-mono text-navy mt-1 block">--</span>
+                                </div>
+                                <div class="bg-slatebg p-3.5 rounded-lg border border-slate-200">
+                                    <span class="text-xs text-slate-500 block">距離全港第 1 名指標</span>
+                                    <span id="u20-metric-top1-val" class="text-lg font-black font-mono text-orange mt-1 block">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 訓練行動呼籲 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-bullseye text-orange text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-bold text-navy text-sm sm:text-base">目標衝擊全港青年排名！</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        跟隨香港十項全能紀錄保持者及現役港隊代表<strong>梁sir</strong>系統化訓練，針對短跑步幅爆發力、擺臂技術與跳遠技術全面提升競技水平。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pt-1">
+                                <a href="#contact" class="block w-full text-center bg-navy hover:bg-navy-light text-white font-bold py-2.5 px-4 rounded-lg text-sm transition shadow">
+                                    查詢訓練課程
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾與聯絡資訊區 (Footer) -->
+    <footer id="contact" class="bg-navy text-white border-t-4 border-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- 公司簡介 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-9 h-9 rounded-lg bg-orange flex items-center justify-center text-white font-black text-lg">
+                            VA
+                        </div>
+                        <span class="font-extrabold text-lg tracking-wider">VITAL ATHLETICS 輝途田徑</span>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        奔向輝途｜專業青少年及學校田徑培訓課程
+                    </p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        常規訓練場地：天水圍運動場 / 屯門鄧肇堅運動場
+                    </p>
+                </div>
+
+                <!-- 聯絡及報名查詢 -->
+                <div>
+                    <h4 class="text-base font-bold text-orange uppercase tracking-wider mb-4">聯絡資料及查詢</h4>
+                    <ul class="space-y-3 text-sm text-slate-200">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-brands fa-instagram text-orange w-5 text-center text-lg"></i>
+                            <span>Instagram：<a href="https://instagram.com/vital_ath" target="_blank" rel="noopener noreferrer" class="underline hover:text-orange">vital_ath</a></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-orange w-5 text-center text-lg"></i>
+                            <span>電郵：<a href="mailto:vitalathleticshk@gmail.com" class="underline hover:text-orange break-all">vitalathleticshk@gmail.com</a></span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-brands fa-whatsapp text-orange w-5 text-center text-lg"></i>
+                            <span>查詢方式：歡迎透過 WhatsApp 或電郵查詢</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 學校/機構包班須知 -->
+                <div>
+                    <h4 class="text-base font-bold text-orange uppercase tracking-wider mb-4">學校 / 機構包班須知</h4>
+                    <div class="bg-navy-light p-4 rounded-xl border border-slate-700 text-xs sm:text-sm text-slate-200 leading-relaxed space-y-2">
+                        <p><strong>適用對象：</strong>中小學田徑隊（堂數按合約計算，學費另行報價）。</p>
+                        <p><strong>重要說明：</strong>學校/機構包班不會有試堂。請學校或機構以電郵（<a href="mailto:vitalathleticshk@gmail.com" class="text-orange underline">vitalathleticshk@gmail.com</a>）進行報價邀請/聯絡，或者透過 WhatsApp 查詢。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
+                <p>&copy; 2026 VITAL ATHLETICS 輝途田徑. All rights reserved.</p>
+                <div class="flex flex-wrap gap-4 sm:gap-6 mt-3 sm:mt-0">
+                    <a href="#courses" class="hover:text-white transition">課程介紹</a>
+                    <a href="#coach" class="hover:text-white transition">教練介紹</a>
+                    <a href="#benchmarks" class="hover:text-white transition">本地學界數據</a>
+                    <a href="#u20-rankings" class="hover:text-white transition">全港U20排名數據</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 邏輯：選單互動、2025-2026 元朗學界官方數據庫、2026 全港 U20 排名數據庫、即時差距分析器 -->
+    <script>
+        // 手機版導覽列切換
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 教練相片預覽載入支援（若本地圖檔於沙盒環境未自動掛載時可使用）
+        const coachPhotoUpload = document.getElementById('coach-photo-upload');
+        const coachPhotoImg = document.getElementById('coach-photo-img');
+        const coachPhotoFallback = document.getElementById('coach-photo-fallback');
+        if (coachPhotoUpload) {
+            coachPhotoUpload.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const url = URL.createObjectURL(file);
+                    coachPhotoImg.src = url;
+                    coachPhotoImg.classList.remove('hidden');
+                    coachPhotoFallback.classList.add('hidden');
+                }
+            });
+        }
+
+        /**
+         * 2025-2026年度中國香港學界體育聯會元朗區中學分會校際田徑比賽官方決賽成績
+         * 嚴格依據提供之 PDF 官方成績表建立，絕無添加任何虛構數字，亦不顯示學校及運動員姓名
+         */
+        const YL_RESULTS_2526 = {
+            "100m": {
+                name: "100米",
+                unit: "秒",
+                type: "time",
+                M: {
+                    A: [
+                        { rank: 1, display: "10.70", val: 10.70 },
+                        { rank: 2, display: "10.90", val: 10.90 },
+                        { rank: 3, display: "11.05", val: 11.05 },
+                        { rank: 4, display: "11.19", val: 11.19 },
+                        { rank: 5, display: "11.22", val: 11.22 },
+                        { rank: 6, display: "11.29", val: 11.29 },
+                        { rank: 7, display: "11.47", val: 11.47 },
+                        { rank: 8, display: "11.69", val: 11.69 }
+                    ],
+                    B: [
+                        { rank: 1, display: "11.19", val: 11.19 },
+                        { rank: 2, display: "11.44", val: 11.44 },
+                        { rank: 3, display: "11.70", val: 11.70 },
+                        { rank: 4, display: "11.80", val: 11.80 },
+                        { rank: 5, display: "11.94", val: 11.94 },
+                        { rank: 6, display: "12.04", val: 12.04, note: "並列第 6 名" },
+                        { rank: 6, display: "12.04", val: 12.04, note: "並列第 6 名" },
+                        { rank: 8, display: "12.44", val: 12.44 }
+                    ],
+                    C: [
+                        { rank: 1, display: "11.89", val: 11.89 },
+                        { rank: 2, display: "11.91", val: 11.91 },
+                        { rank: 3, display: "12.09", val: 12.09 },
+                        { rank: 4, display: "12.10", val: 12.10 },
+                        { rank: 5, display: "12.21", val: 12.21 },
+                        { rank: 6, display: "12.38", val: 12.38 },
+                        { rank: 7, display: "12.51", val: 12.51 },
+                        { rank: 8, display: "12.68", val: 12.68 }
+                    ]
+                },
+                F: {
+                    A: [
+                        { rank: 1, display: "12.58", val: 12.58 },
+                        { rank: 2, display: "12.95", val: 12.95 },
+                        { rank: 3, display: "13.20", val: 13.20 },
+                        { rank: 4, display: "13.35", val: 13.35 },
+                        { rank: 5, display: "13.41", val: 13.41 },
+                        { rank: 6, display: "13.80", val: 13.80 },
+                        { rank: 7, display: "13.81", val: 13.81 },
+                        { rank: 8, display: "13.98", val: 13.98 }
+                    ],
+                    B: [
+                        { rank: 1, display: "12.12", val: 12.12, note: "New Record" },
+                        { rank: 2, display: "13.21", val: 13.21 },
+                        { rank: 3, display: "13.83", val: 13.83 },
+                        { rank: 4, display: "14.09", val: 14.09 },
+                        { rank: 5, display: "14.41", val: 14.41 },
+                        { rank: 6, display: "14.54", val: 14.54 },
+                        { rank: 7, display: "14.74", val: 14.74 },
+                        { rank: 8, display: "DNS (初賽 13.67)", val: null, prelimVal: 13.67 }
+                    ],
+                    C: [
+                        { rank: 1, display: "13.36", val: 13.36 },
+                        { rank: 2, display: "13.76", val: 13.76 },
+                        { rank: 3, display: "13.79", val: 13.79 },
+                        { rank: 4, display: "14.08", val: 14.08 },
+                        { rank: 5, display: "14.19", val: 14.19 },
+                        { rank: 6, display: "14.28", val: 14.28 },
+                        { rank: 7, display: "14.36", val: 14.36 },
+                        { rank: 8, display: "14.98", val: 14.98 }
+                    ]
+                }
+            },
+            "200m": {
+                name: "200米",
+                unit: "秒",
+                type: "time",
+                M: {
+                    A: [
+                        { rank: 1, display: "21.92", val: 21.92 },
+                        { rank: 2, display: "22.07", val: 22.07 },
+                        { rank: 3, display: "22.34", val: 22.34 },
+                        { rank: 4, display: "23.37", val: 23.37 },
+                        { rank: 5, display: "23.52", val: 23.52 },
+                        { rank: 6, display: "24.05", val: 24.05 },
+                        { rank: 7, display: "24.34", val: 24.34 },
+                        { rank: 8, display: "DNS (初賽 24.38)", val: null, prelimVal: 24.38 }
+                    ],
+                    B: [
+                        { rank: 1, display: "23.04", val: 23.04 },
+                        { rank: 2, display: "23.76", val: 23.76 },
+                        { rank: 3, display: "23.84", val: 23.84 },
+                        { rank: 4, display: "24.51", val: 24.51 },
+                        { rank: 5, display: "24.74", val: 24.74 },
+                        { rank: 6, display: "24.76", val: 24.76 },
+                        { rank: 7, display: "24.99", val: 24.99 },
+                        { rank: 8, display: "25.04", val: 25.04 }
+                    ],
+                    C: [
+                        { rank: 1, display: "24.49", val: 24.49 },
+                        { rank: 2, display: "24.77", val: 24.77 },
+                        { rank: 3, display: "25.29", val: 25.29 },
+                        { rank: 4, display: "25.45", val: 25.45 },
+                        { rank: 5, display: "25.49", val: 25.49 },
+                        { rank: 6, display: "25.74", val: 25.74 },
+                        { rank: 7, display: "26.47", val: 26.47 },
+                        { rank: 8, display: "26.80", val: 26.80 }
+                    ]
+                },
+                F: {
+                    A: [
+                        { rank: 1, display: "27.06", val: 27.06 },
+                        { rank: 2, display: "28.00", val: 28.00 },
+                        { rank: 3, display: "28.13", val: 28.13 },
+                        { rank: 4, display: "28.16", val: 28.16 },
+                        { rank: 5, display: "28.63", val: 28.63 },
+                        { rank: 6, display: "29.05", val: 29.05 },
+                        { rank: 7, display: "29.23", val: 29.23 },
+                        { rank: 8, display: "29.73", val: 29.73 }
+                    ],
+                    B: [
+                        { rank: 1, display: "25.77", val: 25.77, note: "New Record" },
+                        { rank: 2, display: "27.87", val: 27.87 },
+                        { rank: 3, display: "29.37", val: 29.37 },
+                        { rank: 4, display: "29.72", val: 29.72 },
+                        { rank: 5, display: "29.79", val: 29.79 },
+                        { rank: 6, display: "29.86", val: 29.86 },
+                        { rank: 7, display: "29.87", val: 29.87 },
+                        { rank: 8, display: "30.37", val: 30.37 }
+                    ],
+                    C: [
+                        { rank: 1, display: "28.28", val: 28.28 },
+                        { rank: 2, display: "29.06", val: 29.06 },
+                        { rank: 3, display: "29.58", val: 29.58 },
+                        { rank: 4, display: "30.22", val: 30.22 },
+                        { rank: 5, display: "30.28", val: 30.28 },
+                        { rank: 6, display: "30.67", val: 30.67 },
+                        { rank: 7, display: "30.72", val: 30.72 },
+                        { rank: 8, display: "DQ (初賽 29.17)", val: null, prelimVal: 29.17 }
+                    ]
+                }
+            },
+            "400m": {
+                name: "400米",
+                unit: "秒 / 分:秒",
+                type: "time",
+                M: {
+                    A: [
+                        { rank: 1, display: "50.97", val: 50.97, note: "初賽 49.67 (New Record)" },
+                        { rank: 2, display: "54.31", val: 54.31 },
+                        { rank: 3, display: "54.76", val: 54.76 },
+                        { rank: 4, display: "54.81", val: 54.81 },
+                        { rank: 5, display: "55.02", val: 55.02 },
+                        { rank: 6, display: "55.46", val: 55.46 },
+                        { rank: 7, display: "55.49", val: 55.49 },
+                        { rank: 8, display: "DQ (初賽 54.55)", val: null, prelimVal: 54.55 }
+                    ],
+                    B: [
+                        { rank: 1, display: "55.38", val: 55.38 },
+                        { rank: 2, display: "55.40", val: 55.40 },
+                        { rank: 3, display: "55.87", val: 55.87 },
+                        { rank: 4, display: "56.05", val: 56.05 },
+                        { rank: 5, display: "56.23", val: 56.23 },
+                        { rank: 6, display: "56.73", val: 56.73 },
+                        { rank: 7, display: "56.93", val: 56.93 },
+                        { rank: 8, display: "57.63", val: 57.63 }
+                    ],
+                    C: [
+                        { rank: 1, display: "57.60", val: 57.60 },
+                        { rank: 2, display: "58.23", val: 58.23 },
+                        { rank: 3, display: "58.27", val: 58.27 },
+                        { rank: 4, display: "59.51", val: 59.51 },
+                        { rank: 5, display: "58.50", val: 58.50 },
+                        { rank: 6, display: "58.98", val: 58.98 },
+                        { rank: 7, display: "1:00.77", val: 60.77 },
+                        { rank: 8, display: "1:00.89", val: 60.89 }
+                    ]
+                },
+                F: {
+                    A: [
+                        { rank: 1, display: "1:01.58", val: 61.58, note: "New Record" },
+                        { rank: 2, display: "1:05.22", val: 65.22 },
+                        { rank: 3, display: "1:06.52", val: 66.52 },
+                        { rank: 4, display: "1:07.50", val: 67.50 },
+                        { rank: 5, display: "1:08.17", val: 68.17 },
+                        { rank: 6, display: "1:08.25", val: 68.25 },
+                        { rank: 7, display: "1:10.40", val: 70.40 },
+                        { rank: 8, display: "DNS (初賽 1:09.48)", val: null, prelimVal: 69.48 }
+                    ],
+                    B: [
+                        { rank: 1, display: "1:04.49", val: 64.49 },
+                        { rank: 2, display: "1:07.77", val: 67.77 },
+                        { rank: 3, display: "1:08.61", val: 68.61 },
+                        { rank: 4, display: "1:08.94", val: 68.94 },
+                        { rank: 5, display: "1:09.04", val: 69.04 },
+                        { rank: 6, display: "1:09.47", val: 69.47 },
+                        { rank: 7, display: "1:11.04", val: 71.04 },
+                        { rank: 8, display: "1:20.83", val: 80.83 }
+                    ],
+                    C: [
+                        { rank: 1, display: "1:05.65", val: 65.65 },
+                        { rank: 2, display: "1:06.52", val: 66.52 },
+                        { rank: 3, display: "1:08.57", val: 68.57 },
+                        { rank: 4, display: "1:10.45", val: 70.45 },
+                        { rank: 5, display: "1:10.94", val: 70.94 },
+                        { rank: 6, display: "1:14.12", val: 74.12 },
+                        { rank: 7, display: "1:15.24", val: 75.24 },
+                        { rank: 8, display: "1:16.26", val: 76.26 }
+                    ]
+                }
+            },
+            "lj": {
+                name: "跳遠",
+                unit: "米 (m)",
+                type: "distance",
+                M: {
+                    A: [
+                        { rank: 1, display: "6.16", val: 6.16 },
+                        { rank: 2, display: "6.14", val: 6.14 },
+                        { rank: 3, display: "6.05", val: 6.05 },
+                        { rank: 4, display: "5.98", val: 5.98 },
+                        { rank: 5, display: "5.87", val: 5.87 },
+                        { rank: 6, display: "5.70", val: 5.70 },
+                        { rank: 7, display: "5.66", val: 5.66 },
+                        { rank: 8, display: "5.51", val: 5.51 }
+                    ],
+                    B: [
+                        { rank: 1, display: "5.75", val: 5.75 },
+                        { rank: 2, display: "5.74", val: 5.74 },
+                        { rank: 3, display: "5.72", val: 5.72 },
+                        { rank: 4, display: "5.49", val: 5.49 },
+                        { rank: 5, display: "5.32", val: 5.32 },
+                        { rank: 6, display: "5.13", val: 5.13 },
+                        { rank: 7, display: "5.06", val: 5.06 },
+                        { rank: 8, display: "5.05", val: 5.05 }
+                    ],
+                    C: [
+                        { rank: 1, display: "5.34", val: 5.34 },
+                        { rank: 2, display: "5.11", val: 5.11 },
+                        { rank: 3, display: "5.01", val: 5.01 },
+                        { rank: 4, display: "4.97", val: 4.97 },
+                        { rank: 5, display: "4.83", val: 4.83 },
+                        { rank: 6, display: "4.71", val: 4.71 },
+                        { rank: 7, display: "4.67", val: 4.67 },
+                        { rank: 8, display: "4.53", val: 4.53 }
+                    ]
+                },
+                F: {
+                    A: [
+                        { rank: 1, display: "4.56", val: 4.56 },
+                        { rank: 2, display: "4.52", val: 4.52 },
+                        { rank: 3, display: "4.39", val: 4.39 },
+                        { rank: 4, display: "4.24", val: 4.24 },
+                        { rank: 5, display: "4.15", val: 4.15 },
+                        { rank: 6, display: "4.12", val: 4.12 },
+                        { rank: 7, display: "3.99", val: 3.99 },
+                        { rank: 8, display: "3.86", val: 3.86 }
+                    ],
+                    B: [
+                        { rank: 1, display: "4.64", val: 4.64 },
+                        { rank: 2, display: "4.34", val: 4.34 },
+                        { rank: 3, display: "4.31", val: 4.31 },
+                        { rank: 4, display: "4.31", val: 4.31 },
+                        { rank: 5, display: "4.22", val: 4.22 },
+                        { rank: 6, display: "3.96", val: 3.96 },
+                        { rank: 7, display: "3.92", val: 3.92 },
+                        { rank: 8, display: "3.92", val: 3.92 }
+                    ],
+                    C: [
+                        { rank: 1, display: "4.51", val: 4.51 },
+                        { rank: 2, display: "4.43", val: 4.43 },
+                        { rank: 3, display: "4.14", val: 4.14 },
+                        { rank: 4, display: "4.10", val: 4.10 },
+                        { rank: 5, display: "3.95", val: 3.95 },
+                        { rank: 6, display: "3.83", val: 3.83 },
+                        { rank: 7, display: "3.76", val: 3.76 },
+                        { rank: 8, display: "3.70", val: 3.70 }
+                    ]
+                }
+            }
+        };
+
+        // 元朗學界篩選狀態與名稱對照
+        let currentState = {
+            event: "100m",
+            gender: "M",
+            grade: "A"
+        };
+
+        const genderNames = {
+            M: "男子",
+            F: "女子"
+        };
+
+        const gradeNames = {
+            A: "甲組",
+            B: "乙組",
+            C: "丙組"
+        };
+
+        // 支援解析秒數或分:秒格式 (例如 "1:02.50" -> 62.50)
+        function parseScoreInput(rawStr) {
+            if (!rawStr) return NaN;
+            const trimmed = rawStr.trim();
+            if (trimmed.includes(':')) {
+                const parts = trimmed.split(':');
+                if (parts.length === 2) {
+                    const mins = parseFloat(parts[0]);
+                    const secs = parseFloat(parts[1]);
+                    if (!isNaN(mins) && !isNaN(secs) && mins >= 0 && secs >= 0) {
+                        return mins * 60 + secs;
+                    }
+                }
+                return NaN;
+            }
+            return parseFloat(trimmed);
+        }
+
+        // DOM 元素 (元朗學界)
+        const eventBtns = document.querySelectorAll('.event-btn');
+        const genderBtns = document.querySelectorAll('.gender-btn');
+        const gradeBtns = document.querySelectorAll('.grade-btn');
+        const tableTitle = document.getElementById('table-title');
+        const tableUnitBadge = document.getElementById('table-unit-badge');
+        const ylHandtimeBanner = document.getElementById('yl-handtime-banner');
+        const ylScoreColHeader = document.getElementById('yl-score-col-header');
+        const ylFootnoteHandtime = document.getElementById('yl-footnote-handtime');
+        const benchmarkTbody = document.getElementById('benchmark-tbody');
+        const analyzerCurrentLabel = document.getElementById('analyzer-current-label');
+        const inputLabel = document.getElementById('input-label');
+        const userScoreInput = document.getElementById('user-score-input');
+        const inputHelper = document.getElementById('input-helper');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const analysisStatus = document.getElementById('analysis-status');
+        const analysisMetrics = document.getElementById('analysis-metrics');
+        const metricTop8Title = document.getElementById('metric-top8-title');
+        const metricTop8Val = document.getElementById('metric-top8-val');
+        const metricGoldVal = document.getElementById('metric-gold-val');
+
+        // 更新按鈕樣式
+        function updateButtonStyles() {
+            eventBtns.forEach(btn => {
+                if (btn.dataset.event === currentState.event) {
+                    btn.className = "event-btn bg-orange text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm";
+                } else {
+                    btn.className = "event-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition";
+                }
+            });
+
+            genderBtns.forEach(btn => {
+                if (btn.dataset.gender === currentState.gender) {
+                    btn.className = "gender-btn bg-navy text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm";
+                } else {
+                    btn.className = "gender-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition";
+                }
+            });
+
+            gradeBtns.forEach(btn => {
+                if (btn.dataset.grade === currentState.grade) {
+                    btn.className = "grade-btn bg-navy text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm";
+                } else {
+                    btn.className = "grade-btn bg-slatebg text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition";
+                }
+            });
+        }
+
+        // 渲染元朗學界成績表與更新輸入提示
+        function renderBenchmarkTable() {
+            const eventObj = YL_RESULTS_2526[currentState.event];
+            const list = eventObj[currentState.gender][currentState.grade];
+            const fullCategoryName = `${genderNames[currentState.gender]}${gradeNames[currentState.grade]}`;
+            const isSprint = eventObj.type === "time";
+
+            tableTitle.textContent = `${fullCategoryName} — ${eventObj.name} 決賽成績指標`;
+            tableUnitBadge.textContent = isSprint ? `單位：${eventObj.unit}｜人手計時成績*` : `單位：${eventObj.unit}`;
+            analyzerCurrentLabel.textContent = isSprint ? `${fullCategoryName} ${eventObj.name} (人手計時*)` : `${fullCategoryName} ${eventObj.name}`;
+
+            if (isSprint) {
+                ylHandtimeBanner.classList.remove('hidden');
+                ylFootnoteHandtime.classList.remove('hidden');
+                ylScoreColHeader.textContent = "決賽成績 (人手計時*)";
+            } else {
+                ylHandtimeBanner.classList.add('hidden');
+                ylFootnoteHandtime.classList.add('hidden');
+                ylScoreColHeader.textContent = "決賽成績";
+            }
+
+            if (eventObj.type === "distance") {
+                inputLabel.textContent = "請輸入你的個人跳遠成績（米）：";
+                userScoreInput.placeholder = "例如：5.20";
+                inputHelper.textContent = "提示：請輸入米數（例如 5.20 代表 5米20）。";
+            } else if (currentState.event === "400m") {
+                inputLabel.textContent = "請輸入你的個人 400米 成績（秒 或 分:秒）：";
+                userScoreInput.placeholder = "例如：60.50 或 1:00.50";
+                inputHelper.textContent = "提示：可輸入總秒數（如 60.50）或分:秒格式（如 1:00.50）（元朗學界短跑成績為人手計時成績*）。";
+            } else {
+                inputLabel.textContent = `請輸入你的個人 ${eventObj.name} 成績（秒）：`;
+                userScoreInput.placeholder = currentState.event === "100m" ? "例如：12.30" : "例如：25.50";
+                inputHelper.textContent = "提示：請輸入秒數（元朗學界短跑項目成績為人手計時成績*）。";
+            }
+
+            benchmarkTbody.innerHTML = "";
+
+            list.forEach((item, idx) => {
+                const tr = document.createElement('tr');
+                
+                // 設定名次標籤與角色說明
+                let badgeHtml = "";
+                let roleText = "決賽前八名";
+                if (item.rank === 1) {
+                    tr.className = "bg-orange-light/60 font-bold";
+                    badgeHtml = `<span class="inline-flex items-center space-x-1.5 bg-orange text-white text-xs font-extrabold px-2.5 py-1 rounded-md"><i class="fa-solid fa-medal"></i><span>第 1 名</span></span>`;
+                    roleText = "金牌成績指標";
+                } else if (item.rank === 2) {
+                    badgeHtml = `<span class="inline-block bg-slate-200 text-navy text-xs font-bold px-2.5 py-1 rounded-md">第 2 名</span>`;
+                    roleText = "銀牌成績指標";
+                } else if (item.rank === 3) {
+                    badgeHtml = `<span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-md">第 3 名</span>`;
+                    roleText = "銅牌成績指標";
+                } else if (idx === 7) {
+                    tr.className = "bg-slate-50/80";
+                    badgeHtml = `<span class="inline-block bg-navy text-white text-xs font-bold px-2.5 py-1 rounded-md">第 8 名</span>`;
+                    roleText = "決賽成績門檻";
+                } else {
+                    badgeHtml = `<span class="inline-block bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-md">第 ${item.rank} 名</span>`;
+                }
+
+                const noteBadge = item.note ? `<span class="ml-2 text-xs font-semibold text-orange bg-orange-light px-2 py-0.5 rounded">${item.note}</span>` : "";
+
+                let unitSuffix = "";
+                if (eventObj.type === "distance") {
+                    unitSuffix = "m";
+                } else {
+                    const hasSpecial = item.display.includes(':') || item.display.includes('DNS') || item.display.includes('DQ');
+                    unitSuffix = (hasSpecial ? "" : "s") + "*";
+                }
+
+                tr.innerHTML = `
+                    <td class="py-3.5 px-6 whitespace-nowrap">${badgeHtml}</td>
+                    <td class="py-3.5 px-6 text-slate-600 text-xs sm:text-sm">${roleText}${noteBadge}</td>
+                    <td class="py-3.5 px-6 text-right font-mono font-bold text-navy whitespace-nowrap">${item.display}${unitSuffix}</td>
+                `;
+                benchmarkTbody.appendChild(tr);
+            });
+
+            // 若輸入框已有數值，自動重新計算
+            if (userScoreInput.value.trim() !== "") {
+                runGapAnalysis();
+            } else {
+                analysisMetrics.classList.add('hidden');
+                analysisStatus.innerHTML = "請於上方輸入你的成績並點擊「即時分析」，系統將自動計算你與決賽第 8 名門檻及第 1 名金牌的差距。";
+            }
+        }
+
+        // 執行元朗學界即時差距分析
+        function runGapAnalysis() {
+            const rawVal = parseScoreInput(userScoreInput.value);
+            if (isNaN(rawVal) || rawVal <= 0) {
+                analysisMetrics.classList.add('hidden');
+                analysisStatus.innerHTML = `<span class="text-red-600"><i class="fa-solid fa-circle-exclamation mr-1"></i>請輸入有效的正數成績數值。</span>`;
+                return;
+            }
+
+            const eventObj = YL_RESULTS_2526[currentState.event];
+            const list = eventObj[currentState.gender][currentState.grade];
+            const fullCategoryName = `${genderNames[currentState.gender]}${gradeNames[currentState.grade]} ${eventObj.name}`;
+
+            const goldItem = list[0];
+            // 若第 8 名決賽為 DNS 或 DQ，則取第 7 名有效決賽成績作為比較基準，並清楚註明
+            let thresholdItem = list[7];
+            let thresholdLabel = "第 8 名決賽成績";
+            let thresholdVal = thresholdItem.val;
+
+            if (thresholdVal === null) {
+                thresholdItem = list[6];
+                thresholdVal = thresholdItem.val;
+                thresholdLabel = "第 7 名決賽完賽成績（第 8 名決賽為 DNS/DQ）";
+            }
+
+            analysisMetrics.classList.remove('hidden');
+            metricTop8Title.textContent = `與決賽門檻 (${thresholdLabel}) 比較`;
+
+            if (eventObj.type === "time") {
+                // 徑賽：時間愈少愈快
+                const diffToTop8 = +(rawVal - thresholdVal).toFixed(2);
+                const diffToGold = +(rawVal - goldItem.val).toFixed(2);
+
+                if (diffToTop8 <= 0) {
+                    metricTop8Val.textContent = `快 ${Math.abs(diffToTop8).toFixed(2)} 秒`;
+                    metricTop8Val.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    metricTop8Val.textContent = `尚差 ${diffToTop8.toFixed(2)} 秒`;
+                    metricTop8Val.className = "text-lg font-black font-mono text-navy mt-1 block";
+                }
+
+                if (diffToGold <= 0) {
+                    metricGoldVal.textContent = `超越金牌 ${Math.abs(diffToGold).toFixed(2)} 秒`;
+                    metricGoldVal.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    metricGoldVal.textContent = `尚差 ${diffToGold.toFixed(2)} 秒`;
+                    metricGoldVal.className = "text-lg font-black font-mono text-orange mt-1 block";
+                }
+
+                // 判斷可達名次
+                let estimatedRank = null;
+                for (let i = 0; i < list.length; i++) {
+                    if (list[i].val !== null && rawVal <= list[i].val) {
+                        estimatedRank = list[i].rank;
+                        break;
+                    }
+                }
+
+                if (estimatedRank === 1) {
+                    analysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}秒）已達到 <strong>${fullCategoryName} 第 1 名（金牌）</strong>水平！透過針對性訓練可進一步鞏固優勢、衝擊學界紀錄。</span>`;
+                } else if (estimatedRank !== null) {
+                    analysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}秒）已達 <strong>${fullCategoryName} 決賽頭 8 名內（約第 ${estimatedRank} 名水平）</strong>！距離第 1 名金牌（${goldItem.display}）只差 <strong>${diffToGold.toFixed(2)} 秒</strong>。</span>`;
+                } else {
+                    analysisStatus.innerHTML = `你的成績（${rawVal.toFixed(2)}秒）距離 <strong>${fullCategoryName}</strong> ${thresholdLabel}（${thresholdItem.display}）尚差 <strong>${diffToTop8.toFixed(2)} 秒</strong>；距離第 1 名金牌（${goldItem.display}）尚差 <strong>${diffToGold.toFixed(2)} 秒</strong>。`;
+                }
+
+            } else {
+                // 跳遠：距離愈遠愈好
+                const diffToTop8 = +(thresholdVal - rawVal).toFixed(2);
+                const diffToGold = +(goldItem.val - rawVal).toFixed(2);
+
+                if (diffToTop8 <= 0) {
+                    metricTop8Val.textContent = `超出 ${Math.abs(diffToTop8).toFixed(2)} 米`;
+                    metricTop8Val.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    metricTop8Val.textContent = `尚差 ${diffToTop8.toFixed(2)} 米`;
+                    metricTop8Val.className = "text-lg font-black font-mono text-navy mt-1 block";
+                }
+
+                if (diffToGold <= 0) {
+                    metricGoldVal.textContent = `超出金牌 ${Math.abs(diffToGold).toFixed(2)} 米`;
+                    metricGoldVal.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    metricGoldVal.textContent = `尚差 ${diffToGold.toFixed(2)} 米`;
+                    metricGoldVal.className = "text-lg font-black font-mono text-orange mt-1 block";
+                }
+
+                let estimatedRank = null;
+                for (let i = 0; i < list.length; i++) {
+                    if (list[i].val !== null && rawVal >= list[i].val) {
+                        estimatedRank = list[i].rank;
+                        break;
+                    }
+                }
+
+                if (estimatedRank === 1) {
+                    analysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}m）已達到 <strong>${fullCategoryName} 第 1 名（金牌）</strong>水平！</span>`;
+                } else if (estimatedRank !== null) {
+                    analysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}m）已達 <strong>${fullCategoryName} 決賽頭 8 名內（約第 ${estimatedRank} 名水平）</strong>！距離第 1 名金牌（${goldItem.display}m）尚差 <strong>${diffToGold.toFixed(2)} 米</strong>。</span>`;
+                } else {
+                    analysisStatus.innerHTML = `你的成績（${rawVal.toFixed(2)}m）距離 <strong>${fullCategoryName}</strong> 第 8 名決賽門檻（${thresholdItem.display}m）尚差 <strong>${diffToTop8.toFixed(2)} 米</strong>；距離第 1 名金牌（${goldItem.display}m）尚差 <strong>${diffToGold.toFixed(2)} 米</strong>。`;
+                }
+            }
+        }
+
+        // 綁定篩選器點擊事件
+        eventBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentState.event = btn.dataset.event;
+                updateButtonStyles();
+                renderBenchmarkTable();
+            });
+        });
+
+        genderBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentState.gender = btn.dataset.gender;
+                updateButtonStyles();
+                renderBenchmarkTable();
+            });
+        });
+
+        gradeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentState.grade = btn.dataset.grade;
+                updateButtonStyles();
+                renderBenchmarkTable();
+            });
+        });
+
+        analyzeBtn.addEventListener('click', runGapAnalysis);
+        userScoreInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                runGapAnalysis();
+            }
+        });
+
+        /**
+         * 2026年度全香港 U20 田徑排名官方數據 (Hong Kong Ranking U20)
+         * 嚴格依據提供之 20261103-M-U20.pdf 及 20261031-W-U20.pdf 建立（第 1 名至第 10 名）
+         */
+        const HK_U20_RANKINGS_2026 = {
+            "100m": {
+                name: "100米",
+                unit: "秒 (s)",
+                type: "time",
+                M: [
+                    { rank: 1, display: "10.29", val: 10.29 },
+                    { rank: 2, display: "10.33", val: 10.33 },
+                    { rank: 3, display: "10.34", val: 10.34 },
+                    { rank: 4, display: "10.44", val: 10.44 },
+                    { rank: 5, display: "10.67", val: 10.67 },
+                    { rank: 6, display: "10.71", val: 10.71 },
+                    { rank: 7, display: "10.74", val: 10.74 },
+                    { rank: 8, display: "10.77", val: 10.77, note: "並列第 8 名" },
+                    { rank: 8, display: "10.77", val: 10.77, note: "並列第 8 名" },
+                    { rank: 10, display: "10.78", val: 10.78, note: "並列第 10 名" }
+                ],
+                F: [
+                    { rank: 1, display: "11.79", val: 11.79 },
+                    { rank: 2, display: "11.88", val: 11.88 },
+                    { rank: 3, display: "12.03", val: 12.03 },
+                    { rank: 4, display: "12.06", val: 12.06, note: "並列第 4 名" },
+                    { rank: 4, display: "12.06", val: 12.06, note: "並列第 4 名" },
+                    { rank: 6, display: "12.14", val: 12.14 },
+                    { rank: 7, display: "12.18", val: 12.18 },
+                    { rank: 8, display: "12.19", val: 12.19 },
+                    { rank: 9, display: "12.21", val: 12.21 },
+                    { rank: 10, display: "12.27", val: 12.27 }
+                ]
+            },
+            "200m": {
+                name: "200米",
+                unit: "秒 (s)",
+                type: "time",
+                M: [
+                    { rank: 1, display: "20.85", val: 20.85 },
+                    { rank: 2, display: "21.13", val: 21.13 },
+                    { rank: 3, display: "21.27", val: 21.27 },
+                    { rank: 4, display: "21.55", val: 21.55 },
+                    { rank: 5, display: "21.79", val: 21.79 },
+                    { rank: 6, display: "21.82", val: 21.82 },
+                    { rank: 7, display: "21.84", val: 21.84, note: "並列第 7 名" },
+                    { rank: 7, display: "21.84", val: 21.84, note: "並列第 7 名" },
+                    { rank: 9, display: "21.94", val: 21.94 },
+                    { rank: 10, display: "21.98", val: 21.98 }
+                ],
+                F: [
+                    { rank: 1, display: "24.15", val: 24.15 },
+                    { rank: 2, display: "24.44", val: 24.44 },
+                    { rank: 3, display: "24.65", val: 24.65 },
+                    { rank: 4, display: "24.69", val: 24.69 },
+                    { rank: 5, display: "24.83", val: 24.83 },
+                    { rank: 6, display: "24.87", val: 24.87 },
+                    { rank: 7, display: "25.12", val: 25.12 },
+                    { rank: 8, display: "25.29", val: 25.29 },
+                    { rank: 9, display: "25.38", val: 25.38 },
+                    { rank: 10, display: "25.61", val: 25.61 }
+                ]
+            },
+            "400m": {
+                name: "400米",
+                unit: "秒 (s)",
+                type: "time",
+                M: [
+                    { rank: 1, display: "47.75", val: 47.75 },
+                    { rank: 2, display: "48.74", val: 48.74 },
+                    { rank: 3, display: "49.09", val: 49.09 },
+                    { rank: 4, display: "49.13", val: 49.13 },
+                    { rank: 5, display: "49.21", val: 49.21 },
+                    { rank: 6, display: "49.27", val: 49.27 },
+                    { rank: 7, display: "49.79", val: 49.79 },
+                    { rank: 8, display: "49.99", val: 49.99 },
+                    { rank: 9, display: "50.01", val: 50.01 },
+                    { rank: 10, display: "50.19", val: 50.19 }
+                ],
+                F: [
+                    { rank: 1, display: "55.32", val: 55.32 },
+                    { rank: 2, display: "56.01", val: 56.01 },
+                    { rank: 3, display: "57.00", val: 57.00 },
+                    { rank: 4, display: "57.07", val: 57.07 },
+                    { rank: 5, display: "57.22", val: 57.22 },
+                    { rank: 6, display: "57.32", val: 57.32 },
+                    { rank: 7, display: "58.24", val: 58.24 },
+                    { rank: 8, display: "58.50", val: 58.50 },
+                    { rank: 9, display: "58.93", val: 58.93 },
+                    { rank: 10, display: "59.17", val: 59.17 }
+                ]
+            },
+            "lj": {
+                name: "跳遠",
+                unit: "米 (m)",
+                type: "distance",
+                M: [
+                    { rank: 1, display: "7.46", val: 7.46 },
+                    { rank: 2, display: "7.45", val: 7.45 },
+                    { rank: 3, display: "7.19", val: 7.19 },
+                    { rank: 4, display: "7.10", val: 7.10 },
+                    { rank: 5, display: "7.09", val: 7.09 },
+                    { rank: 6, display: "7.03", val: 7.03 },
+                    { rank: 7, display: "7.02", val: 7.02 },
+                    { rank: 8, display: "6.98", val: 6.98, note: "並列第 8 名" },
+                    { rank: 8, display: "6.98", val: 6.98, note: "並列第 8 名" },
+                    { rank: 10, display: "6.91", val: 6.91 }
+                ],
+                F: [
+                    { rank: 1, display: "6.00", val: 6.00 },
+                    { rank: 2, display: "5.80", val: 5.80 },
+                    { rank: 3, display: "5.75", val: 5.75 },
+                    { rank: 4, display: "5.70", val: 5.70 },
+                    { rank: 5, display: "5.56", val: 5.56, note: "並列第 5 名" },
+                    { rank: 5, display: "5.56", val: 5.56, note: "並列第 5 名" },
+                    { rank: 7, display: "5.44", val: 5.44 },
+                    { rank: 8, display: "5.43", val: 5.43 },
+                    { rank: 9, display: "5.42", val: 5.42 },
+                    { rank: 10, display: "5.39", val: 5.39, note: "並列第 10 名" }
+                ]
+            }
+        };
+
+        let u20State = {
+            event: "100m",
+            gender: "M"
+        };
+
+        const u20EventBtns = document.querySelectorAll('.u20-event-btn');
+        const u20GenderBtns = document.querySelectorAll('.u20-gender-btn');
+        const u20TableTitle = document.getElementById('u20-table-title');
+        const u20TableSubtitle = document.getElementById('u20-table-subtitle');
+        const u20UnitBadge = document.getElementById('u20-unit-badge');
+        const u20Tbody = document.getElementById('u20-tbody');
+        const u20AnalyzerCurrentLabel = document.getElementById('u20-analyzer-current-label');
+        const u20InputLabel = document.getElementById('u20-input-label');
+        const u20ScoreInput = document.getElementById('u20-score-input');
+        const u20InputHelper = document.getElementById('u20-input-helper');
+        const u20AnalyzeBtn = document.getElementById('u20-analyze-btn');
+        const u20AnalysisStatus = document.getElementById('u20-analysis-status');
+        const u20AnalysisMetrics = document.getElementById('u20-analysis-metrics');
+        const u20MetricTop10Val = document.getElementById('u20-metric-top10-val');
+        const u20MetricTop1Val = document.getElementById('u20-metric-top1-val');
+
+        function updateU20ButtonStyles() {
+            u20EventBtns.forEach(btn => {
+                if (btn.dataset.event === u20State.event) {
+                    btn.className = "u20-event-btn bg-orange text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm";
+                } else {
+                    btn.className = "u20-event-btn bg-white text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition border border-slate-200";
+                }
+            });
+
+            u20GenderBtns.forEach(btn => {
+                if (btn.dataset.gender === u20State.gender) {
+                    btn.className = "u20-gender-btn bg-navy text-white font-bold py-2.5 px-3 rounded-lg text-sm transition shadow-sm";
+                } else {
+                    btn.className = "u20-gender-btn bg-white text-navy hover:bg-slate-200 font-bold py-2.5 px-3 rounded-lg text-sm transition border border-slate-200";
+                }
+            });
+        }
+
+        function renderU20Table() {
+            const eventObj = HK_U20_RANKINGS_2026[u20State.event];
+            const list = eventObj[u20State.gender];
+            const genderLabel = u20State.gender === "M" ? "男子 U20" : "女子 U20";
+
+            u20TableTitle.textContent = `${genderLabel} — ${eventObj.name} 全港排名成績指標`;
+            u20TableSubtitle.textContent = u20State.gender === "M"
+                ? "Hong Kong Ranking <Men (U20)> (2026-01-01 to 2026-12-31)"
+                : "Hong Kong Ranking <Women (U20)> (2026-01-01 to 2026-10-31)";
+            u20UnitBadge.textContent = `單位：${eventObj.unit}`;
+            u20AnalyzerCurrentLabel.textContent = `${genderLabel} ${eventObj.name}`;
+
+            if (eventObj.type === "distance") {
+                u20InputLabel.textContent = "請輸入你的個人跳遠成績（米）：";
+                u20ScoreInput.placeholder = "例如：6.20";
+                u20InputHelper.textContent = "提示：請輸入米數（例如 6.20 代表 6米20）。";
+            } else {
+                u20InputLabel.textContent = `請輸入你的個人 ${eventObj.name} 成績（秒）：`;
+                u20ScoreInput.placeholder = u20State.event === "100m" ? "例如：11.20" : (u20State.event === "200m" ? "例如：23.00" : "例如：53.50");
+                u20InputHelper.textContent = "提示：請輸入秒數（例如 53.50）。";
+            }
+
+            u20Tbody.innerHTML = "";
+
+            list.forEach((item, idx) => {
+                const tr = document.createElement('tr');
+                let badgeHtml = "";
+                let roleText = "全港 U20 頭十名";
+
+                if (item.rank === 1) {
+                    tr.className = "bg-orange-light/60 font-bold";
+                    badgeHtml = `<span class="inline-flex items-center space-x-1.5 bg-orange text-white text-xs font-extrabold px-2.5 py-1 rounded-md"><i class="fa-solid fa-crown"></i><span>第 1 名</span></span>`;
+                    roleText = "全港 U20 榜首指標";
+                } else if (item.rank === 2) {
+                    badgeHtml = `<span class="inline-block bg-slate-200 text-navy text-xs font-bold px-2.5 py-1 rounded-md">第 2 名</span>`;
+                    roleText = "全港 U20 第二名";
+                } else if (item.rank === 3) {
+                    badgeHtml = `<span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-md">第 3 名</span>`;
+                    roleText = "全港 U20 第三名";
+                } else if (idx === 9) {
+                    tr.className = "bg-slate-50/80";
+                    badgeHtml = `<span class="inline-block bg-navy text-white text-xs font-bold px-2.5 py-1 rounded-md">第 ${item.rank} 名</span>`;
+                    roleText = "全港 U20 頭十名門檻";
+                } else {
+                    badgeHtml = `<span class="inline-block bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-md">第 ${item.rank} 名</span>`;
+                }
+
+                const noteBadge = item.note ? `<span class="ml-2 text-xs font-semibold text-orange bg-orange-light px-2 py-0.5 rounded">${item.note}</span>` : "";
+                const unitSuffix = eventObj.type === "distance" ? "m" : "s";
+
+                tr.innerHTML = `
+                    <td class="py-3.5 px-6 whitespace-nowrap">${badgeHtml}</td>
+                    <td class="py-3.5 px-6 text-slate-600 text-xs sm:text-sm">${roleText}${noteBadge}</td>
+                    <td class="py-3.5 px-6 text-right font-mono font-bold text-navy whitespace-nowrap">${item.display}${unitSuffix}</td>
+                `;
+                u20Tbody.appendChild(tr);
+            });
+
+            if (u20ScoreInput.value.trim() !== "") {
+                runU20GapAnalysis();
+            } else {
+                u20AnalysisMetrics.classList.add('hidden');
+                u20AnalysisStatus.innerHTML = "請於上方輸入你的成績並點擊「即時分析」，系統將自動計算你與全港 U20 第 10 名門檻及第 1 名榜首的差距。";
+            }
+        }
+
+        function runU20GapAnalysis() {
+            const rawVal = parseScoreInput(u20ScoreInput.value);
+            if (isNaN(rawVal) || rawVal <= 0) {
+                u20AnalysisMetrics.classList.add('hidden');
+                u20AnalysisStatus.innerHTML = `<span class="text-red-600"><i class="fa-solid fa-circle-exclamation mr-1"></i>請輸入有效的正數成績數值。</span>`;
+                return;
+            }
+
+            const eventObj = HK_U20_RANKINGS_2026[u20State.event];
+            const list = eventObj[u20State.gender];
+            const genderLabel = u20State.gender === "M" ? "男子 U20" : "女子 U20";
+            const fullTitle = `${genderLabel} ${eventObj.name}`;
+
+            const top1Item = list[0];
+            const top10Item = list[list.length - 1];
+
+            u20AnalysisMetrics.classList.remove('hidden');
+
+            if (eventObj.type === "time") {
+                const diffToTop10 = +(rawVal - top10Item.val).toFixed(2);
+                const diffToTop1 = +(rawVal - top1Item.val).toFixed(2);
+
+                if (diffToTop10 <= 0) {
+                    u20MetricTop10Val.textContent = `快 ${Math.abs(diffToTop10).toFixed(2)} 秒`;
+                    u20MetricTop10Val.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    u20MetricTop10Val.textContent = `尚差 ${diffToTop10.toFixed(2)} 秒`;
+                    u20MetricTop10Val.className = "text-lg font-black font-mono text-navy mt-1 block";
+                }
+
+                if (diffToTop1 <= 0) {
+                    u20MetricTop1Val.textContent = `超越榜首 ${Math.abs(diffToTop1).toFixed(2)} 秒`;
+                    u20MetricTop1Val.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    u20MetricTop1Val.textContent = `尚差 ${diffToTop1.toFixed(2)} 秒`;
+                    u20MetricTop1Val.className = "text-lg font-black font-mono text-orange mt-1 block";
+                }
+
+                let estimatedRank = null;
+                for (let i = 0; i < list.length; i++) {
+                    if (rawVal <= list[i].val) {
+                        estimatedRank = list[i].rank;
+                        break;
+                    }
+                }
+
+                if (estimatedRank === 1) {
+                    u20AnalysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}s）已達到 <strong>全港 ${fullTitle} 第 1 名</strong>水平！</span>`;
+                } else if (estimatedRank !== null) {
+                    u20AnalysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}s）已達 <strong>全港 ${fullTitle} 頭 10 名內（約第 ${estimatedRank} 名水平）</strong>！距離全港第 1 名（${top1Item.display}s）尚差 <strong>${diffToTop1.toFixed(2)} 秒</strong>。</span>`;
+                } else {
+                    u20AnalysisStatus.innerHTML = `你的成績（${rawVal.toFixed(2)}s）距離 <strong>全港 ${fullTitle}</strong> 第 10 名門檻（${top10Item.display}s）尚差 <strong>${diffToTop10.toFixed(2)} 秒</strong>；距離全港第 1 名（${top1Item.display}s）尚差 <strong>${diffToTop1.toFixed(2)} 秒</strong>。`;
+                }
+            } else {
+                const diffToTop10 = +(top10Item.val - rawVal).toFixed(2);
+                const diffToTop1 = +(top1Item.val - rawVal).toFixed(2);
+
+                if (diffToTop10 <= 0) {
+                    u20MetricTop10Val.textContent = `超出 ${Math.abs(diffToTop10).toFixed(2)} 米`;
+                    u20MetricTop10Val.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    u20MetricTop10Val.textContent = `尚差 ${diffToTop10.toFixed(2)} 米`;
+                    u20MetricTop10Val.className = "text-lg font-black font-mono text-navy mt-1 block";
+                }
+
+                if (diffToTop1 <= 0) {
+                    u20MetricTop1Val.textContent = `超出榜首 ${Math.abs(diffToTop1).toFixed(2)} 米`;
+                    u20MetricTop1Val.className = "text-lg font-black font-mono text-green-600 mt-1 block";
+                } else {
+                    u20MetricTop1Val.textContent = `尚差 ${diffToTop1.toFixed(2)} 米`;
+                    u20MetricTop1Val.className = "text-lg font-black font-mono text-orange mt-1 block";
+                }
+
+                let estimatedRank = null;
+                for (let i = 0; i < list.length; i++) {
+                    if (rawVal >= list[i].val) {
+                        estimatedRank = list[i].rank;
+                        break;
+                    }
+                }
+
+                if (estimatedRank === 1) {
+                    u20AnalysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}m）已達到 <strong>全港 ${fullTitle} 第 1 名</strong>水平！</span>`;
+                } else if (estimatedRank !== null) {
+                    u20AnalysisStatus.innerHTML = `<span class="text-green-700">你的成績（${rawVal.toFixed(2)}m）已達 <strong>全港 ${fullTitle} 頭 10 名內（約第 ${estimatedRank} 名水平）</strong>！距離全港第 1 名（${top1Item.display}m）尚差 <strong>${diffToTop1.toFixed(2)} 米</strong>。</span>`;
+                } else {
+                    u20AnalysisStatus.innerHTML = `你的成績（${rawVal.toFixed(2)}m）距離 <strong>全港 ${fullTitle}</strong> 第 10 名門檻（${top10Item.display}m）尚差 <strong>${diffToTop10.toFixed(2)} 米</strong>；距離全港第 1 名（${top1Item.display}m）尚差 <strong>${diffToTop1.toFixed(2)} 米</strong>。`;
+                }
+            }
+        }
+
+        u20EventBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                u20State.event = btn.dataset.event;
+                updateU20ButtonStyles();
+                renderU20Table();
+            });
+        });
+
+        u20GenderBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                u20State.gender = btn.dataset.gender;
+                updateU20ButtonStyles();
+                renderU20Table();
+            });
+        });
+
+        u20AnalyzeBtn.addEventListener('click', runU20GapAnalysis);
+        u20ScoreInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                runU20GapAnalysis();
+            }
+        });
+
+        // 初始載入渲染
+        updateButtonStyles();
+        renderBenchmarkTable();
+        updateU20ButtonStyles();
+        renderU20Table();
+    </script>
+</body>
+</html>
